@@ -1,16 +1,59 @@
-const path = require('path');
+const path = require('path')
+const TailwindCss = require('tailwindcss')
+const Autoprefixer = require('autoprefixer')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-module.exports = {
-  mode: 'production',
-	entry: './src/index.js',
-	output: {
-		path: path.resolve(__dirname, 'docs'),
-		filename: 'main.js'
-	},
-	devServer: {
-		contentBase: path.join(__dirname, 'docs'),
-    open: true,
-    inline: true,
-    hot: true
-	}
+module.exports = (env, args) => {
+  const { mode } = args
+  const sourceMap = mode === 'development'
+
+  return {
+    entry: './src/index.js',
+    output: {
+      path: path.join(__dirname, 'docs'),
+      filename: 'index.js'
+    },
+    devtool: 'source-map',
+    module: {
+      rules: [
+         {
+           test: /\.css$/,
+           use: [
+             MiniCssExtractPlugin.loader,
+             {
+               loader: 'css-loader',
+               options: {
+                 sourceMap
+               }
+             },
+             {
+               loader: 'postcss-loader',
+               options: {
+                 postcssOptions: {
+                   plugins: [
+                     TailwindCss,
+                     Autoprefixer
+                   ]
+                 }
+               }
+             }
+           ]
+         }
+      ]
+    },
+    devServer: {
+      contentBase: path.join(__dirname, 'docs'),
+      // port: 3000,
+      open: true
+    },
+    plugins: [
+      new MiniCssExtractPlugin({
+        filename: 'style.css'
+      }),
+      new HtmlWebpackPlugin({
+        template: path.join(__dirname, 'docs', 'index.html')
+      })
+    ]
+  }
 }

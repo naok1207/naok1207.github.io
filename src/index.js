@@ -4,4 +4,4 @@ import { hello } from "./sub";
 // sub.jsに定義されたJavaScriptを実行する。
 hello();
 
-// console.log("aaa");
+console.log("aaa");

@@ -2,13 +2,19 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {
+    "autoprefixer": "^10.3.4",
+    "css-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.3.0",
+    "postcss-loader": "^6.1.1",
+    "tailwindcss": "^2.2.15",
     "webpack": "^5.52.1",
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "3.11.2"
   },
   "scripts": {
-    "build": "webpack",
-    "start": "webpack serve",
-    "watch": "webpack --watch"
+    "dev": "NODE_ENV=development webpack --mode development",
+    "build": "NODE_ENV=production webpack --mode production",
+    "start": "NODE_ENV=development webpack serve --mode development"
   }
 }
