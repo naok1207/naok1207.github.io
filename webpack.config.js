@@ -1,14 +1,14 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
 	entry: './src/index.js',
 	output: {
-		path: path.resolve(__dirname, 'public'),
+		path: path.resolve(__dirname, 'docs'),
 		filename: 'main.js'
 	},
 	devServer: {
-		contentBase: path.join(__dirname, 'public'),
+		contentBase: path.join(__dirname, 'docs'),
     open: true,
     inline: true,
     hot: true
