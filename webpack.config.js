@@ -48,6 +48,7 @@ module.exports = (env, args) => {
       hot: true,
       // port: 3000,
       open: true,
+      watchContentBase: true,
       watchOptions: {
         aggregateTimeout: 600,
         poll: 1000
