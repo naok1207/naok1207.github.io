@@ -1,0 +1,16 @@
+version: '3'
+services:
+  webpack:
+    build: .
+    working_dir: /app
+    environment: 
+      - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - .:/app
+      - ./src:/app/src
+      - ./docs:/app/docs
+    ports:
+      - 8080:8080
+    command: yarn run start
+    stdin_open: true
+    tty: true

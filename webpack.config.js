@@ -44,8 +44,14 @@ module.exports = (env, args) => {
     },
     devServer: {
       contentBase: path.join(__dirname, 'docs'),
+      host: '0.0.0.0',
+      hot: true,
       // port: 3000,
-      open: true
+      open: true,
+      watchOptions: {
+        aggregateTimeout: 600,
+        poll: 1000
+      },
     },
     plugins: [
       new MiniCssExtractPlugin({
