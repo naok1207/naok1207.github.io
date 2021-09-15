@@ -10,14 +10,6 @@
   border: 5px solid rgba(0, 0, 0, 0.2);
 }
 
-#home::before {
-  content: 'HOME';
-  transform: rotate(-90deg);
-  position: absolute;
-  left: 2.4rem;
-  color: white;
-}
-
 .menu {
   display: flex;
   height: 40vh;
@@ -75,4 +67,12 @@
 
 .arrow:hover {
   fill: white;
+}
+
+section {
+  height: calc(100vh - 1.75rem * 2);
+}
+
+.bg-height {
+  height: calc(100vh - 1.75rem * 2);
 }

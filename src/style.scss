@@ -10,13 +10,15 @@
   border: 5px solid rgba(0, 0, 0, 0.2);
 }
 
-#home::before {
-  content: 'HOME';
-  transform: rotate(-90deg);
-  position: absolute;
-  left: 2.4rem;
-  color: white;
-}
+// #home::before {
+//   content: 'HOME';
+//   position: absolute;
+//   left: 5.9rem;
+//   top: 50%;
+//   transform: rotate(-90deg) translateY(-50%);
+//   color: white;
+//   z-index: 50;
+// }
 
 .menu {
   display: flex;
@@ -69,4 +71,12 @@
   &:hover {
     fill: rgba(255, 255, 255, 1);
   }
+}
+
+section {
+  height: calc(100vh - 1.75rem * 2);
+}
+
+.bg-height {
+  height: calc(100vh - 1.75rem * 2);
 }
