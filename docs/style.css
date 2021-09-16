@@ -517,9 +517,21 @@ video {
  * Ensure the default browser behavior of the `hidden` attribute.
  */
 
+[hidden] {
+  display: none;
+}
+
 *, ::before, ::after {
   --tw-border-opacity: 1;
   border-color: rgba(229, 231, 235, var(--tw-border-opacity));
+}
+
+.visible {
+  visibility: visible;
+}
+
+.fixed {
+  position: fixed;
 }
 
 .absolute {
@@ -540,8 +552,20 @@ video {
   bottom: 1.75rem;
 }
 
+.top-0 {
+  top: 0px;
+}
+
+.top-7 {
+  top: 1.75rem;
+}
+
 .top-20 {
   top: 5rem;
+}
+
+.right-0 {
+  right: 0px;
 }
 
 .right-32 {
@@ -552,12 +576,24 @@ video {
   right: 12rem;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
 .bottom-20 {
   bottom: 5rem;
 }
 
+.left-0 {
+  left: 0px;
+}
+
 .left-48 {
   left: 12rem;
+}
+
+.z-40 {
+  z-index: 40;
 }
 
 .z-50 {
@@ -569,8 +605,21 @@ video {
   margin-right: auto;
 }
 
+.my-7 {
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
+}
+
 .mb-10 {
   margin-bottom: 2.5rem;
+}
+
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
 }
 
 .flex {
@@ -581,6 +630,18 @@ video {
   display: table;
 }
 
+.contents {
+  display: contents;
+}
+
+.hidden {
+  display: none;
+}
+
+.h-7 {
+  height: 1.75rem;
+}
+
 .h-52 {
   height: 13rem;
 }
@@ -589,8 +650,20 @@ video {
   height: 100vh;
 }
 
+.w-14 {
+  width: 3.5rem;
+}
+
 .w-52 {
   width: 13rem;
+}
+
+.w-screen {
+  width: 100vw;
+}
+
+.border-collapse {
+  border-collapse: collapse;
 }
 
 .transform {
@@ -647,6 +720,10 @@ video {
   }
 }
 
+.resize {
+  resize: both;
+}
+
 .items-center {
   align-items: center;
 }
@@ -661,6 +738,10 @@ video {
 
 .rounded-full {
   border-radius: 9999px;
+}
+
+.border {
+  border-width: 1px;
 }
 
 .bg-black {
@@ -722,6 +803,10 @@ video {
   color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 *, ::before, ::after {
   --tw-shadow: 0 0 #0000;
 }
@@ -768,14 +853,6 @@ video {
 
 .avatar {
   border: 5px solid rgba(0, 0, 0, 0.2);
-}
-
-#home::before {
-  content: 'HOME';
-  transform: rotate(-90deg);
-  position: absolute;
-  left: 2.4rem;
-  color: white;
 }
 
 .menu {
@@ -835,6 +912,15 @@ video {
 
 .arrow:hover {
   fill: white;
+}
+
+section {
+  height: calc(100vh - 1.75rem * 2);
+  width: calc(100vw - 3.5rem * 2);
+}
+
+.bg-height {
+  height: calc(100vh - 1.75rem * 2);
 }
 
 /* purgecss end ignore */
