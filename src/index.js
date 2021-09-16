@@ -1,6 +1,6 @@
 import "tailwindcss/tailwind.css"
 import "./style.css"
-require("smooth-scroll")
+import SmoothScroll from 'smooth-scroll';
 
 // 初期化
 var sectionNowIndex = 0;
@@ -35,17 +35,21 @@ function sectionBeforeCss(id) {
 const upArrow = document.getElementById('arrow-up');
 const downArrow = document.getElementById('arrow-down');　
 
-upArrow.on('click', function() {
-  moveSection(sectionNowIndex, 1);
+upArrow.addEventListener('click', function() {
+  if (sectionNowIndex == sectionsLength - 1) { return; }
+
+  moveSection(1);
 });
 
-downArrow.on('click', function() {
-  moveSection(sectionNowIndex, -1);
+downArrow.addEventListener('click', function() {
+  if (sectionNowIndex == 0) { return; }
+
+  moveSection(-1);
 })
 
 function moveSection(moveTo) {
   sectionNowIndex += moveTo
   var scroll = new SmoothScroll();
-  var anchor = sections.items(sectionNowIndex);
+  var anchor = sections.item(sectionNowIndex);
   scroll.animateScroll(anchor);
 }
