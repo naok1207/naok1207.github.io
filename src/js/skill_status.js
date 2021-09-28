@@ -5,12 +5,12 @@ var sheet = style.sheet;
 
 const skill_status = [...document.getElementsByClassName('skill-status')];
 skill_status.forEach(function(element, index) {
-  sheet.insertRule(skillStatusBeforeCss(element.id), index);
+  sheet.insertRule(skillStatusBeforeCss(element.id, element.dataset.name), index);
 })
 
-function skillStatusBeforeCss(id) {
+function skillStatusBeforeCss(id, name) {
   return `#${id}::before {
-    content: '${id.toUpperCase()}';
+    content: '${name.toUpperCase()}';
     color: white;
     z-index: 40;
     display: block;
