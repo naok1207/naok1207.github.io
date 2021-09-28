@@ -68,7 +68,7 @@ function moveSection(moveTo) {
   sectionNowIndex.add(moveTo);
   var scroll = new SmoothScroll();
   var anchor = sections.item(sectionNowIndex.get());
-  scroll.animateScroll(anchor);
+  scroll.animateScroll(anchor.offsetTop);
 }
 
 // メニューバーによる移動処理
