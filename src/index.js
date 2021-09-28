@@ -1,6 +1,7 @@
 import "tailwindcss/tailwind.css"
 import "./style.css"
 import SmoothScroll from 'smooth-scroll';
+import "./js/skill_status";
 
 // 初期化
 // var sectionNowIndex = 0;
