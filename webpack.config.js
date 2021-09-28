@@ -39,6 +39,10 @@ module.exports = (env, args) => {
                }
              }
            ]
+         },
+         {
+          test: /\.html$/,
+          loader: "html-loader"
          }
       ]
     },
@@ -59,7 +63,7 @@ module.exports = (env, args) => {
         filename: 'style.css'
       }),
       new HtmlWebpackPlugin({
-        template: path.join(__dirname, 'docs', 'index.html')
+        template: path.join(__dirname, 'src', 'index.html')
       })
     ]
   }
