@@ -18,15 +18,28 @@ module.exports = (env, args) => {
     module: {
       rules: [
          {
-           test: /\.css$/,
+           test: /\.(sass|css|scss)$/,
            use: [
-             MiniCssExtractPlugin.loader,
-             {
-               loader: 'css-loader',
-               options: {
-                 sourceMap
-               }
-             },
+            {
+              loader: MiniCssExtractPlugin.loader,
+            },
+            {
+              loader: "css-loader",
+              options: {
+                url: false,
+                sourceMap: true,
+              },
+            },
+            {
+              loader: "sass-loader",
+              options: {
+                implementation: require('sass'),
+                sassOptions: {
+                  fiber: require('fibers'),
+                },
+                sourceMap: true,
+              },
+            },
              {
                loader: 'postcss-loader',
                options: {
