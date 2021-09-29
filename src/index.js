@@ -1,7 +1,8 @@
 import "tailwindcss/tailwind.css"
-import "./style.css"
+import "./style.scss"
 import SmoothScroll from 'smooth-scroll';
 import "./js/skill_status";
+import "./js/portfolio";
 
 // 初期化
 // var sectionNowIndex = 0;
