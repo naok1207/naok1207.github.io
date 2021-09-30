@@ -5,6 +5,7 @@
   right: 150px;
 
   .card {
+    z-index: 50;
     width: 100px;
     height: 50px;
     background-color: white;
@@ -34,18 +35,17 @@
     position: absolute;
     inset: 125px 175px;
     opacity: 0;
-    .image-area {
+    .portfolio-image {
       width: calc(1920px * 0.3);
       height: calc(1080px * 0.3);
       background-color: white;
     }
   }
   .show {
-    animation-delay: 3s;
-    animation: 3s fadein both;
+    animation: 1s fadein both;
   }
   .hidden {
-    animation: 3s fadeout both;
+    animation: 1s fadeout both;
   }
 }
 
