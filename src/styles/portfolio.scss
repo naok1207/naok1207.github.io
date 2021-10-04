@@ -42,6 +42,11 @@
   }
   .show {
     animation: 1s fadein both;
+
+    a {
+      display: block;
+      animation: 1s fadein both;
+    }
   }
   .hidden {
     animation: 1s fadeout both;
@@ -54,6 +59,7 @@
   }
   100% {
     opacity: 1;
+    z-index: 50;
   }
 }
 @keyframes fadeout {
@@ -62,5 +68,6 @@
   }
   100% {
     opacity: 0;
+    z-index: 0;
   }
 }
