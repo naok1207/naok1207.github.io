@@ -3,6 +3,7 @@ const TailwindCss = require('tailwindcss')
 const Autoprefixer = require('autoprefixer')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 module.exports = (env, args) => {
   const { mode } = args
@@ -77,7 +78,8 @@ module.exports = (env, args) => {
       }),
       new HtmlWebpackPlugin({
         template: path.join(__dirname, 'src', 'index.html')
-      })
+      }),
+      new FaviconsWebpackPlugin(path.join(__dirname, 'img', 'favicon.png'))
     ]
   }
 }
